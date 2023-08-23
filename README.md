@@ -1,2 +1,2 @@
-# lab4-game-skeleton
-Edits were made in the main.c file and the LCD_GFX.c file in lib
+# Pong Game
+Pong is one of the first ever computer games created. It's quite simple - two paddles and a ball and the goal is to defeat the opponent by making them lose the ball. In this project, a LCD screen is programmed using an Arduino Uno and SPI, and its graphics library is written, with the help of some given .h files. A buzzer, joystick, LEDs, and a logic level shifter is also used. The NodeMCU board is used for wireless control of the joystick. 
