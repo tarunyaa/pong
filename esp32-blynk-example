@@ -1,0 +1,39 @@
+
+#define BLYNK_PRINT Serial
+
+#define BLYNK_TEMPLATE_ID "TMPLunfUnO9I"
+#define BLYNK_TEMPLATE_NAME "ESE 350 Lab 4"
+#define BLYNK_AUTH_TOKEN "eogt28hzEeXu_SmoR1arDCkUJiMSLBsL"
+
+#include <WiFi.h>
+#include <WiFiClient.h>
+#include <BlynkSimpleEsp32.h>
+
+char auth[] = BLYNK_AUTH_TOKEN;
+
+// Your WiFi credentials.
+// Set password to "" for open networks.
+char ssid[] = "Tarunyaa Phone";
+char pass[] = "12345678";
+
+int sensorValue;
+
+BLYNK_WRITE(V1) {
+  sensorValue = param.asInt();
+  analogWrite(A0, sensorValue);
+}
+
+void setup()
+{
+  // Debug console
+  Serial.begin(115200);
+  Blynk.begin(auth, ssid, pass);
+}
+
+void loop()
+{
+  Blynk.run(); 
+
+  Serial.print("Sensor value: ");
+  Serial.println(sensorValue);
+}
